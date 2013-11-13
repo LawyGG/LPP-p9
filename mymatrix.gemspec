@@ -6,11 +6,11 @@ require 'mymatrix/version'
 Gem::Specification.new do |spec|
   spec.name          = "mymatrix"
   spec.version       = Mymatrix::VERSION
-  spec.authors       = ["Laura A.G.G."]
-  spec.email         = ["alu0100698244@ull.edu.es"]
+  spec.authors       = ["Laura A.G.G. y Alberto F.B."]
+  spec.email         = ["alu0100698244@ull.edu.es, alu0100695816@ull.edu.es"]
   spec.description   = %q{TODO: Write a gem description}
   spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/alu0100698244/p9.git"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
