@@ -1,29 +1,10 @@
-# Mymatrix
+# MyMatrix
 
-TODO: Write a gem description
+Para la primera parte de esta practica hemos creado la estructura de nuestro fichero:
 
-## Installation
+#Pasos
 
-Add this line to your application's Gemfile:
-
-    gem 'mymatrix'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install mymatrix
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Contributing
-
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+1. Usando bundle gem MyMatrix hemos creado la estructura basica.
+2. Se modifica el fichero '.gemspec' para incluir nuestros datos.
+3. Incluimos ficheros adicionales, asi como Gemfile, Rakefile, Guardfile, etc.
+4. Anadimos contenido a los ficheros adicionales creados.
