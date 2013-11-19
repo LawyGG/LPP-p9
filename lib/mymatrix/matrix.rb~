@@ -1,0 +1,92 @@
+require 'Fraccion'
+
+class Matrix_base
+
+	attr_accessor :ancho :alto
+
+	def initialize
+		@ancho, @alto = ancho, alto
+	end
+
+end
+
+
+class Matrix < Matrix_base
+
+	attr_accessor :matriz
+	
+	def initialize(ancho, alto)
+		super
+		@matriz=Array.new(ancho)
+		@matriz.map! {Array.new(alto)}		
+	end
+	
+	def [](i)
+		@matriz[i]
+	end
+
+	def []=(i,other)
+		@matriz[i]=other
+	end
+
+	def to_s
+		tmp="["
+		for i in 0...@ancho
+			tmp+="["
+			for j in 0...@ancho
+				tmp+="#{@matriz[i][j]}"
+				if j < (@ancho-1)
+				tmp+=","
+				end	
+			end
+			tmp+="]"	
+		end
+		tmp+="]"
+		tmp
+	end
+
+	def ==(other)
+		for i in 0...@ancho
+			for j in 0...@ancho
+				@matriz[i][j]==other.matriz[i][j]
+			end
+		end
+	end
+
+	def +(other)
+		resultado=Matrix.new(@ancho)
+		raise 'Las matrices deben tener las mismas dimensiones' unless other.ancho==@ancho
+		for i in 0...@ancho
+			for j in 0...@ancho
+				resultado[i][j] = @matriz[i][j]+other.matriz[i][j]
+			end
+		end
+		resultado
+	end
+
+	def *(other)
+        	resultado=Matrix.new(@ancho)
+		raise 'Las matrices deben tener las mismas dimensiones' unless other.ancho==@ancho
+
+		for i in 0...@ancho do 
+                	for j in 0...@ancho do
+                                suma = (self.matriz[i][j] * other.matriz[j][0])
+                        	for k in 1...@ancho do
+                                	resultado[i][k] = suma + (self.matriz[i][j] * other.matriz[j][k])
+                        	end
+                	end
+        	end
+		resultado
+	end
+end
+
+
+
+class Matrix_d < Matrix_base
+
+	attr_accessor :num, :
+
+end
+
+
+

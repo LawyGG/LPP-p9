@@ -1,0 +1,27 @@
+require 'matrix.rb'
+
+class matrix_base 
+  attr:accesor(:n,:m)
+
+  def initialize(n,m)
+    @n, @m = n, m
+  end
+end
+
+class Matrix < matrix_base
+  def initialize(n, m)
+    super
+    @matriz=Array.new[n,m]
+  end
+end
+
+class matrix_d < matriz base
+  def initialize(n,m,numz)
+    super(n,m)
+    @posx=[numz]
+    @posy=[numz]
+    @num=@Array.new[num]
+
+    
+  end
+end
