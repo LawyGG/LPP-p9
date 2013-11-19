@@ -82,18 +82,40 @@ end
 
 
 
-class Matrix_d < Matrix_base
+class Matrix_disp < Matrix_base
 
 	attr_accessor :valor, :x, :y
 
 	def initialize (ancho, alto, nnum)
 		super(ancho, alto)
 
+		@coord = Array.new[nnum]
+		@coord.map! {Array.new(2)}
+
 		@x = Array.new[nnum]
 		@y = Array.new[nnum]
 		@valor = Array.new[nnum]
 
 	end
+
+	def [](i)
+                @coord[i]
+        end
+
+        def []=(i,other)
+                @coord[i]=other
+        end
+
+	def to_s
+		tmp="["
+		for i in 0...@ncho
+		for i2 in 0...@coord.size
+			tmp+="["
+			for j in 0...@alto
+			for j2 in 0
+			if @coord[i2][j2] = i and @coord[i2][j2+1] = j
+				tmp+="#{@valor[i]
+	
 
 end
 
