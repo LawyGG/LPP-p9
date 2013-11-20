@@ -108,4 +108,84 @@ describe "MyMatrix" do
 			(@m4 * @m3).should == r
 		end
 	end
+
+	describe "Comprobacion de la resta" do
+		it "Comprobacion de la resta para densas" do
+			r = Matrix.new(2,2)
+                        r.matriz = [[3,-2],[-7,1]]
+
+                        (@m1 - @m3).should == r
+		end
+
+		it "Comprobacion de la resta para dispersas" do
+			r = Matrix.new(2,2)
+                        r.matriz = [[0,0],[-5,2]]
+
+                        (@m2 - @m4).should == r
+		end
+
+		it "Comprobacion de la resta para densa-dispersa" do
+			r = Matrix.new(2,2)
+                        r.matriz = [[4,2],[1,1]]
+
+                        (@m1 - @m2).should == r
+		end
+
+		it "Comprobacion de la resta para dispersa-densa" do
+			r = Matrix.new(2,2)
+                        r.matriz = [[-1,-4],[-3,-2]]
+
+                        (@m4 - @m3).should == r
+		end
+	end
+
+	describe "Comprobacion de maximo y minimo" do
+		it "Comprobacion de Maximo para densas" do
+			@m1.max.should eq(4)
+		end
+
+		it "Comprobacion de maximo para dispersas" do
+			@m2.max.should eq(2)
+		end
+
+		it "Comprobacion de minimo para densas" do
+			@m3.min.should eq(1)
+		end
+		
+		it "Comprobacion de minimo para dispersas" do
+			@m4.min.should eq(5)
+		end
+	end
+
+	describe "Comprobacion de coerce" do
+
+		before :each do
+			@f1 = Matrix.new(2,2)
+			@f1.matriz = [[1,1],[1,1]]
+
+			@f2 = Matrix.new(2,2)
+			@f2.matriz = [[Fraccion.new(1,2),Fraccion.new(1,2)],[Fraccion.new(1,2),Fraccion.new(1,2)]]
+		end
+
+		it "Suma de matriz Fixnum y matriz Fraccion" do
+			r = Matrix.new(2,2)
+			r.matriz = [[Fraccion.new(3,2),Fraccion.new(3,2)],[Fraccion.new(3,2),Fraccion.new(3,2)]]	
+			
+			(@f1 + @f2).should == r
+		end
+
+		it "Resta de matriz fixnum y matriz Fraccion" do
+			r = Matrix.new(2,2)
+			r.matriz = [[Fraccion.new(1,2),Fraccion.new(1,2)],[Fraccion.new(1,2),Fraccion.new(1,2)]]
+
+			(@f1 - @f2).should == r
+		end
+
+		it "Muliplicacion de matriz fixnum y matriz fraccion" do
+			r = Matrix.new(2,2)
+			r.matriz = [[Fraccion.new(1,1),Fraccion.new(1,1)],[Fraccion.new(1,1),Fraccion.new(1,1)]]
+			
+			(@f1 * @f2).should == r
+		end
+	end
 end

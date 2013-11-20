@@ -126,22 +126,24 @@ class Matrix < Matrix_base
 		max=0
 	  	for i in 0...@ancho do
 		  for j in 0...@alto do
-			if(@matrix[i][j] > max)
+			if(@matriz[i][j] > max)
 			  max=@matriz[i][j]
 			end
 		  end
 		end
+		max
 	end
 
 	def min
                 min=999999
                 for i in 0...@ancho do
                   for j in 0...@alto do
-                        if(@matrix[i][j] > min)
+                        if(@matriz[i][j] < min)
                           min=@matriz[i][j]
                         end
                   end
                 end
+		min
         end
 
 end
@@ -300,6 +302,7 @@ class Matrix_disp < Matrix_base
 		  max=@valor[i]
 		end	
 	  end
+	  max
 	end
 
 	def min
@@ -310,6 +313,7 @@ class Matrix_disp < Matrix_base
                   min=@valor[i]
                 end
           end
+	  min
         end
 
 end
