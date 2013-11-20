@@ -65,8 +65,8 @@ class Fraccion
 
     if(something.is_a? Numeric)
 	aux = Fraccion.new(something,1)
+	[self,m1]
     end
-    [self,something]
   end
   
   def +(other)
