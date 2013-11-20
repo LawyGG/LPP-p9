@@ -11,6 +11,14 @@ describe "MyMatrix" do
 		@m2.x = [1]
 		@m2.y = [1]
 		@m2.valor = [2]
+
+		@m3 = Matrix.new(2,2)
+		@m3.matriz = [[1,4],[8,2]]
+
+		@m4 = Matrix_disp.new(2,2,1)
+                @m4.x = [1]
+                @m4.y = [0]
+                @m4.valor = [5]
 	end
 
 	describe "Inicializacion correcta" do
@@ -18,7 +26,7 @@ describe "MyMatrix" do
 			r = Matrix.new(2,2)
 			r.matriz = [[4,2],[1,3]]
 
-			#@m1.should == r
+			@m1.should == r
 		end
 
 		it "Inicializacion de m2" do
@@ -31,7 +39,7 @@ describe "MyMatrix" do
 		end
 	end
 
-	describe "Comprobación de muestra por pantalla" do
+	describe "Comprobacion de muestra por pantalla" do
 		it "Muestra por pantalla m1" do
 			@m1.to_s.should eq("[[4,2],[1,3]]")
 		end
@@ -40,4 +48,64 @@ describe "MyMatrix" do
 			@m2.to_s.should eq("[[0,0],[0,2]]")
 		end
 	end 
+
+	describe "Comprobacion de la suma" do
+		it "Comprobacion de suma de densas" do
+			r = Matrix.new(2,2)
+			r.matriz = [[5,6],[9,5]]
+
+			(@m1 + @m3).should == r
+		end
+
+		it "Comprobacion de suma de dispersas" do
+			r = Matrix.new(2,2)
+			r.matriz = [[0,0],[5,2]]
+	
+			(@m2 + @m4).should == r
+		end
+
+		it "Comprobacion de suma de densa-dispersa" do
+			r = Matrix.new(2,2)
+			r.matriz = [[4,2],[1,5]]
+
+			(@m1 + @m2).should == r
+		end
+		
+		it "Comprobacion de suma de dispersa-densa" do
+			r = Matrix.new(2,2)
+			r.matriz = [[1,4],[13,2]]
+
+			(@m4 + @m3).should == r
+		end
+	end
+
+	describe "Comprobacion de la multiplicacion" do
+		it "Comprobacion de la multiplicacion de densas" do
+			r = Matrix.new(2,2)
+			r.matriz = [[20,20],[25,10]]
+
+			(@m1 * @m3).should == r
+		end
+
+		it "Comprobacion de la multiplicacion de dispersas" do
+			r = Matrix.new(2,2)
+			r.matriz = [[0,0],[10,0]]
+
+			(@m2 * @m4).should == r
+		end
+
+		it "Comprobacion de la multiplicacion de densa-dispersa" do
+			r = Matrix.new(2,2)
+			r.matriz = [[0,4],[0,6]]
+			
+			(@m1 * @m2).should == r
+		end
+
+		it "Comprobacion de la multiplicacion de dispersa-densa" do
+			r = Matrix.new(2,2)
+			r.matriz = [[0,0],[5,20]]
+
+			(@m4 * @m3).should == r
+		end
+	end
 end

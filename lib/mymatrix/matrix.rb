@@ -85,7 +85,7 @@ class Matrix < Matrix_base
 	end
 
 	def +(other)
-		if (other is? Matrix_disp) 
+		if (other is_a? Matrix_disp) 
 		  m1 = other.to_matrix
 		  super(self, m1)
 		else
