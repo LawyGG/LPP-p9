@@ -62,6 +62,10 @@ class Fraccion
   end
   
   def coerce(something)
+
+    if(something.is_a? Numeric)
+	aux = Fraccion.new(something,1)
+    end
     [self,something]
   end
   

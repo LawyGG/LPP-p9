@@ -43,6 +43,17 @@ class Matrix_base
                 resultado
         end
 
+	def -(other)
+		resultado=Matrix.new(@ancho, @alto)
+                raise 'Las matrices deben tener las mismas dimensiones' unless other.ancho==@ancho && other.alto==@alto
+                for i in 0...@ancho
+                        for j in 0...@alto
+                                resultado[i][j] = @matriz[i][j]-other.matriz[i][j]
+                        end
+                end
+                resultado
+	end
+
 
 end
 
@@ -101,6 +112,38 @@ class Matrix < Matrix_base
 		  super
 		end
 	end
+
+	def -(other)
+		if (other.is_a? Matrix_disp)
+                  m1 = other.to_matrix
+                  super(m1)
+                else
+                  super
+                end
+	end
+
+	def max
+		max=0
+	  	for i in 0...@ancho do
+		  for j in 0...@alto do
+			if(@matrix[i][j] > max)
+			  max=@matriz[i][j]
+			end
+		  end
+		end
+	end
+
+	def min
+                min=999999
+                for i in 0...@ancho do
+                  for j in 0...@alto do
+                        if(@matrix[i][j] > min)
+                          min=@matriz[i][j]
+                        end
+                  end
+                end
+        end
+
 end
 
 
@@ -217,6 +260,57 @@ class Matrix_disp < Matrix_base
 		  m1*other
 		end
 	end
+
+	def -(other)
+		if(other.is_a? Matrix)
+                        m1 = self.to_matrix
+                        m1-other
+                else
+                  resultado=Matrix.new(@ancho, @alto)
+                  raise 'Las matrices deben tener las mismas dimensiones' unless other.ancho==@ancho && other.alto==@alto
+                  for i in 0...@ancho
+                          for j in 0...@alto
+                          aux1 = encontrar(i,j)
+                          aux2 = other.encontrar(i,j)
+
+                          if(aux1 == -1)
+                                aux1 = 0
+                          else
+                                aux1 = @valor[aux1]
+                          end
+
+                          if(aux2 == -1)
+                                aux2 = 0
+                          else
+                                aux2 = other.valor[aux2]
+                          end
+
+                          resultado[i][j] = aux1 -  aux2
+                        end
+                  end
+                  resultado
+                end
+	end
+
+	def max
+	  max=0
+
+	  for i in 0...@valor.length do
+		if(@valor[i] > max)
+		  max=@valor[i]
+		end	
+	  end
+	end
+
+	def min
+          min=999999
+
+          for i in 0...@valor.length do
+                if(@valor[i] < min)
+                  min=@valor[i]
+                end
+          end
+        end
 
 end
 
