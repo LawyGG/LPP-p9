@@ -164,26 +164,26 @@ describe "MyMatrix" do
 			@f1.matriz = [[1,1],[1,1]]
 
 			@f2 = Matrix.new(2,2)
-			@f2.matriz = [[Fraccion.new(1,2),Fraccion.new(1,2)],[Fraccion.new(1,2),Fraccion.new(1,2)]]
+			@f2.matriz = [[Fraccion.new(1,2),Fraccion.new(0,1)],[Fraccion.new(0,1),Fraccion.new(0,1)]]
 		end
 
 		it "Suma de matriz Fixnum y matriz Fraccion" do
 			r = Matrix.new(2,2)
-			r.matriz = [[Fraccion.new(3,2),Fraccion.new(3,2)],[Fraccion.new(3,2),Fraccion.new(3,2)]]	
+			r.matriz = [[Fraccion.new(3,2),Fraccion.new(1,1)],[Fraccion.new(1,1),Fraccion.new(1,1)]]	
 			
 			(@f1 + @f2).should == r
 		end
 
 		it "Resta de matriz fixnum y matriz Fraccion" do
 			r = Matrix.new(2,2)
-			r.matriz = [[Fraccion.new(1,2),Fraccion.new(1,2)],[Fraccion.new(1,2),Fraccion.new(1,2)]]
+			r.matriz = [[Fraccion.new(1,2),Fraccion.new(1,1)],[Fraccion.new(1,1),Fraccion.new(1,1)]]
 
 			(@f1 - @f2).should == r
 		end
 
 		it "Muliplicacion de matriz fixnum y matriz fraccion" do
 			r = Matrix.new(2,2)
-			r.matriz = [[Fraccion.new(1,1),Fraccion.new(1,1)],[Fraccion.new(1,1),Fraccion.new(1,1)]]
+			r.matriz = [[Fraccion.new(1,2),Fraccion.new(1,2)],[Fraccion.new(0,1),Fraccion.new(0,1)]]
 			
 			(@f1 * @f2).should == r
 		end
