@@ -20,8 +20,8 @@ class Matrix_base
 	 def +(other)
                 resultado=Matrix.new(@ancho, @alto)
                 raise 'Las matrices deben tener las mismas dimensiones' unless other.ancho==@ancho && other.alto==@alto
-                for i in 0...@ancho
-                        for j in 0...@alto
+                @ancho.times do |i|
+                        @alto.times do |j| 
                                 resultado[i][j] = @matriz[i][j]+other.matriz[i][j]
                         end
                 end
@@ -32,10 +32,10 @@ class Matrix_base
                 resultado=Matrix.new(@ancho, @alto)
                 raise 'Las matrices deben tener las mismas dimensiones' unless other.alto==@ancho
 
-                for i in 0...@ancho do
-                        for j in 0...@alto do
+                @ancho.times do |i|
+                       @alto.times do |j|
                                 suma = (self.matriz[i][j] * other.matriz[j][0])
-                                for k in 1...@alto do
+                                @alto.times  do |k|
                                         resultado[i][k] = suma + (self.matriz[i][j] * other.matriz[j][k])
                                 end
                         end
@@ -46,8 +46,8 @@ class Matrix_base
 	def -(other)
 		resultado=Matrix.new(@ancho, @alto)
                 raise 'Las matrices deben tener las mismas dimensiones' unless other.ancho==@ancho && other.alto==@alto
-                for i in 0...@ancho
-                        for j in 0...@alto
+                @ancho.times do |i|
+                        @alto.times do |j|
                                 resultado[i][j] = @matriz[i][j]-other.matriz[i][j]
                         end
                 end
@@ -70,9 +70,9 @@ class Matrix < Matrix_base
 
 	def to_s
 		tmp="["
-		for i in 0...@ancho
+		@ancho.times do |i|
 			tmp+="["
-			for j in 0...@alto
+			@alto.times do |j|
 				tmp+="#{@matriz[i][j]}"
 				if j < (@ancho-1)
 				tmp+=","
@@ -88,8 +88,8 @@ class Matrix < Matrix_base
 	end
 
 	def ==(other)
-		for i in 0...@ancho
-			for j in 0...@alto
+		@ancho.times do |i|
+			@alto.times do |j|
 				@matriz[i][j]==other.matriz[i][j]
 			end
 		end
@@ -124,8 +124,8 @@ class Matrix < Matrix_base
 
 	def max
 		max=0
-	  	for i in 0...@ancho do
-		  for j in 0...@alto do
+	  	@ancho.times do |i| 
+		  @alto.times do |j| 
 			if(@matriz[i][j] > max)
 			  max=@matriz[i][j]
 			end
@@ -136,8 +136,8 @@ class Matrix < Matrix_base
 
 	def min
                 min=999999
-                for i in 0...@ancho do
-                  for j in 0...@alto do
+                @ancho.times do |i|
+                  @alto.times do |j|
                         if(@matriz[i][j] < min)
                           min=@matriz[i][j]
                         end
@@ -163,7 +163,7 @@ class Matrix_disp < Matrix_base
 	end
 	
 	def encontrar(i, j)
-	  for k in 0...@x.length do
+	  @x.length.times do |k|
 		if ( @x[k]==i && @y[k]==j)
 		   return k; 
 		end
@@ -174,9 +174,9 @@ class Matrix_disp < Matrix_base
 
 	def to_s
                 tmp="["
-                for i in 0...@ancho
+                @ancho.times do |i|
                         tmp+="["
-                        for j in 0...@alto
+                        @alto.times do |j| 
 				aux = encontrar(i,j)
 				if(aux == -1)
                                 	tmp+="0"
@@ -199,8 +199,8 @@ class Matrix_disp < Matrix_base
 	def to_matrix
 		mat = Matrix.new(@ancho,@alto)
 
-		for i in 0...@ancho do
-		  for j in 0...@alto do
+		@ancho.times do |i|
+		  @alto.times do |j|
 		      aux = encontrar(i,j)
 		      if (aux != -1)
 			mat[i][j] = @valor[aux]
@@ -213,7 +213,7 @@ class Matrix_disp < Matrix_base
 	end	
 
 	 def ==(other)
-                for k in 0...@x.length
+                @x.length.times do |k|
                    @x[k] == other.x[k]
 		   @y[k] == other.y[k]
 		   @valor[k] == other.valor[k]
@@ -228,9 +228,9 @@ class Matrix_disp < Matrix_base
 		else
                   resultado=Matrix.new(@ancho, @alto)
                   raise 'Las matrices deben tener las mismas dimensiones' unless other.ancho==@ancho && other.alto==@alto
-                  for i in 0...@ancho
-                          for j in 0...@alto
-                	  aux1 = encontrar(i,j)
+                  @ancho.times do |i|              	  
+			@alto.times do |j|
+			  aux1 = encontrar(i,j)
 			  aux2 = other.encontrar(i,j)
 
 			  if(aux1 == -1)
@@ -270,22 +270,22 @@ class Matrix_disp < Matrix_base
                 else
                   resultado=Matrix.new(@ancho, @alto)
                   raise 'Las matrices deben tener las mismas dimensiones' unless other.ancho==@ancho && other.alto==@alto
-                  for i in 0...@ancho
-                          for j in 0...@alto
+                  @ancho.times do |i|
+                          @alto.times do |j|
                           aux1 = encontrar(i,j)
                           aux2 = other.encontrar(i,j)
 
-                          if(aux1 == -1)
+                            if(aux1 == -1)
                                 aux1 = 0
-                          else
+                            else
                                 aux1 = @valor[aux1]
-                          end
+                            end
 
-                          if(aux2 == -1)
+                            if(aux2 == -1)
                                 aux2 = 0
-                          else
+                            else
                                 aux2 = other.valor[aux2]
-                          end
+                            end
 
                           resultado[i][j] = aux1 -  aux2
                         end
@@ -297,7 +297,7 @@ class Matrix_disp < Matrix_base
 	def max
 	  max=0
 
-	  for i in 0...@valor.length do
+	  @valor.length.times do |i|
 		if(@valor[i] > max)
 		  max=@valor[i]
 		end	
@@ -308,14 +308,14 @@ class Matrix_disp < Matrix_base
 	def min
           min=999999
 
-          for i in 0...@valor.length do
+          @valor.length.times do |i|
                 if(@valor[i] < min)
+
                   min=@valor[i]
                 end
           end
 	  min
         end
-
 end
 
 
