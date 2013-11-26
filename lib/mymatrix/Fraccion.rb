@@ -1,4 +1,15 @@
+# Autores:: 
+# - Laura Abigail Gómez González
+# - Alberto Fariña Barrera
+#
+# = Clase Fraccion
+# La clase Fraccion ofrece la posibilidad de crear objetos representados como fracción, así
+# como realizar muchas de las operaciones más básicas que se pueden realizar con fracciones,
+# tales como operaciones aritméticas, comparacionales, etc.
+#
+# A continuación se definen todos los métodos existentes
 
+ 
 class Fraccion
   
   attr_accessor :num, :denom
