@@ -1,4 +1,5 @@
-#require './Fraccion.rb'
+#
+
 
 class Matrix_base
 
@@ -9,7 +10,7 @@ class Matrix_base
 		@matriz = [[]]
 	end
 
-	 def [](i)
+	def [](i)
                 @matriz[i]
         end
 
@@ -17,7 +18,7 @@ class Matrix_base
                 @matriz[i]=other
         end
 
-	 def +(other)
+	def +(other)
                 resultado=Matrix.new(@ancho, @alto)
                 raise 'Las matrices deben tener las mismas dimensiones' unless other.ancho==@ancho && other.alto==@alto
                 @ancho.times do |i|
