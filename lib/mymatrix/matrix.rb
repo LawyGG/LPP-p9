@@ -1,23 +1,32 @@
-#
-
-
+# La clase 'Matrix_base' se usa como clase padre de las clases que contendrán tanto la matrix dispersa
+# como la densa, conteniendo los métodos que ambas clase usarán en común.
 class Matrix_base
 
+	# Se declaran los términos 'ancho' y 'alto' que llamarán a las variables de instancia homónimas.
 	attr_accessor :ancho, :alto
 
+	# La función de initialize es muy simple:
+	# * Inicializar las variables de instancia para el tamaño de la matriz.
+	# * Crear una matriz vacía que será usada por las clases hijas.
 	def initialize(ancho, alto)
 		@ancho, @alto = ancho, alto
 		@matriz = [[]]
 	end
 
+	# Este método permite el uso de corchetes para la variable matriz en el caso de la llamada.
+	# Por ejemplo permite usar sentencias como: "p = @matriz[1][1]".
 	def [](i)
                 @matriz[i]
         end
 
+	# Este método es identico al anterior pero para el caso de que el elemento de la matriz
+	# se iguale a otro elemento.
+	# Esto permitiría realizar sentencias tales como: "@matriz[1][1] = p".
         def []=(i,other)
                 @matriz[i]=other
         end
 
+	# Método que permite sumar un elemento de la clase con otro. Está definido de forma funcional.
 	def +(other)
                 resultado=Matrix.new(@ancho, @alto)
                 raise 'Las matrices deben tener las mismas dimensiones' unless other.ancho==@ancho && other.alto==@alto
@@ -29,6 +38,7 @@ class Matrix_base
                 resultado
         end
 
+	# Método que permite multiplicar dos elementos de la clase. Está definido de forma funcional.
         def *(other)
                 resultado=Matrix.new(@ancho, @alto)
                 raise 'Las matrices deben tener las mismas dimensiones' unless other.alto==@ancho
@@ -44,6 +54,7 @@ class Matrix_base
                 resultado
         end
 
+	# Este método permite restar dos objetos de esta clase entre sí. Está definido de forma funcional.
 	def -(other)
 		resultado=Matrix.new(@ancho, @alto)
                 raise 'Las matrices deben tener las mismas dimensiones' unless other.ancho==@ancho && other.alto==@alto
@@ -54,21 +65,25 @@ class Matrix_base
                 end
                 resultado
 	end
-
-
 end
 
-
+# La clase Matrix hereda de la clase 'Matrix_base' y será la que se utilize para definir las matrices densas.
 class Matrix < Matrix_base
 
+	# Crea el término matriz para referirse a dicha variable de instancia.
 	attr_accessor :matriz
 	
+	# El initialize realiza dos funciones:
+	# * Con el comando 'super' llama al initialize de la clase madre.
+	# * Otorgarle a la matriz el alto y el ancho deseado.
 	def initialize(ancho, alto)
 		super
 		@matriz=Array.new(ancho)
 		@matriz.map! {Array.new(alto)}		
 	end
 
+	# La salida de este método es la matriz pasada a string, de manera que pueda usarse en 'puts',
+	# comprobaciones, etc.
 	def to_s
 		tmp="["
 		@ancho.times do |i|
@@ -88,6 +103,8 @@ class Matrix < Matrix_base
 		tmp
 	end
 
+	# Este método permite comparar dos objetos de la clase Matrix y devolverá 'true' si son iguales y
+	# 'false' si son distintos.
 	def ==(other)
 		@ancho.times do |i|
 			@alto.times do |j|
@@ -96,6 +113,10 @@ class Matrix < Matrix_base
 		end
 	end
 
+	# La suma tiene dos partes diferenciadas:
+	# * Si el elemento de la derecha es una matriz dispersa, esta se pasa a densa y se llama a super
+	#   para que opere con ellas.
+	# * En otro caso directamente llama a super ya que las dos matrices serían densas.
 	def +(other)
 		if (other.is_a? Matrix_disp) 
 		  m1 = other.to_matrix
@@ -105,6 +126,10 @@ class Matrix < Matrix_base
 		end
 	end
 
+	# La multiplicación tiene dos partes diferenciadas:
+        # * Si el elemento de la derecha es una matriz dispersa, esta se pasa a densa y se llama a super
+        #   para que opere con ellas.
+        # * En otro caso directamente llama a super ya que las dos matrices serían densas.
 	def *(other)
 		if( other.is_a? Matrix_disp)
 		  m1 =other.to_matrix
@@ -114,6 +139,10 @@ class Matrix < Matrix_base
 		end
 	end
 
+	# La resta tiene dos partes diferenciadas:
+        # * Si el elemento de la derecha es una matriz dispersa, esta se pasa a densa y se llama a super
+        #   para que opere con ellas.
+        # * En otro caso directamente llama a super ya que las dos matrices serían densas.
 	def -(other)
 		if (other.is_a? Matrix_disp)
                   m1 = other.to_matrix
@@ -123,6 +152,7 @@ class Matrix < Matrix_base
                 end
 	end
 
+	# Este método halla el máximo elemento de la matriz desde la que se llame.
 	def max
 		max=0
 	  	@ancho.times do |i| 
@@ -135,6 +165,7 @@ class Matrix < Matrix_base
 		max
 	end
 
+	# Este método halla el mínimo elemento de la matriz desde la que se llame.
 	def min
                 min=999999
                 @ancho.times do |i|
@@ -146,15 +177,19 @@ class Matrix < Matrix_base
                 end
 		min
         end
-
 end
 
-
-
+# La clase Matrix_disp es la clase hija de 'Matrix_base' que se encargará de representar las matrices
+# dispersas
 class Matrix_disp < Matrix_base
-
+	
+	# En este caso a parte de ancho y alto definiremos lo siguiente para llamar a las variables
+	# de instancia definidas en el initialize.
 	attr_accessor :valor, :x, :y
 
+	# Este initialize llama a super con los parámetros ancho y alto y luego crea los tres arrays
+	# necesarios para almacenar la matriz que serán de tamaño 'nnum', donde 'nnum' es el numero 
+	# de elementos no nulos de la matriz.
 	def initialize (ancho, alto, nnum)
 		super(ancho, alto)
 
@@ -162,7 +197,8 @@ class Matrix_disp < Matrix_base
 		@y = Array.new[nnum]
 		@valor = Array.new[nnum]
 	end
-	
+
+	# 
 	def encontrar(i, j)
 	  @x.length.times do |k|
 		if ( @x[k]==i && @y[k]==j)
@@ -172,7 +208,7 @@ class Matrix_disp < Matrix_base
 	  return -1
 	end
 
-
+	# Permite pasar la matriz dispersa a string para poder mostrarla por pantalla o compararla
 	def to_s
                 tmp="["
                 @ancho.times do |i|
@@ -197,6 +233,7 @@ class Matrix_disp < Matrix_base
                 tmp+="]"
         end
 
+	# Est método permite convertir una matriz dispersa en una matriz continua.
 	def to_matrix
 		mat = Matrix.new(@ancho,@alto)
 
@@ -213,7 +250,8 @@ class Matrix_disp < Matrix_base
 		mat
 	end	
 
-	 def ==(other)
+	# Este método permite comparar dos matrices dispersas.
+	def ==(other)
                 @x.length.times do |k|
                    @x[k] == other.x[k]
 		   @y[k] == other.y[k]
@@ -221,6 +259,9 @@ class Matrix_disp < Matrix_base
                 end
         end
 
+	# Este método comprueba en primer lugar si el objeto con el que se va a sumar es una matriz densa.
+	# Si lo es, convierte dicha matriz dispersa a densa y vuelve a hacer la suma. En el caso de que la
+	# otra sea dispersa se realiza el algoritmo que se encuentra en el 'else'.
         def +(other)
 
 		if(other.is_a? Matrix)
@@ -253,6 +294,8 @@ class Matrix_disp < Matrix_base
 		end
         end
 
+	# En este caso, para hacer la multiplicación se pasará la matriz a densa, sea cual sea su posición y
+	# siempre que sea dispersa para luego operar de nuevo.
         def *(other)
 		m1 = self.to_matrix
 		
@@ -264,6 +307,8 @@ class Matrix_disp < Matrix_base
 		end
 	end
 
+	# Para hacer la resta se sigue el mismo método que con la suma. Si la matriz de la derecha es densa,
+	# se pasa a densa la de la izquierda para luego operar de nuevo y si es dispersa se sigue el algoritmo. 
 	def -(other)
 		if(other.is_a? Matrix)
                         m1 = self.to_matrix
@@ -295,6 +340,7 @@ class Matrix_disp < Matrix_base
                 end
 	end
 
+	# Este método halla el máximo elemento de la matriz dispersa.
 	def max
 	  max=0
 
@@ -306,6 +352,7 @@ class Matrix_disp < Matrix_base
 	  max
 	end
 
+	# Este método halla el mínimo elemento de la matriz dispersa.
 	def min
           min=999999
 

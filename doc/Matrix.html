@@ -160,7 +160,51 @@
   
     <li class="file"><a href="./doc/doc/created_rid_html.html">created_rid.html</a>
   
+    <li class="file"><a href="./doc/doc/doc/Fraccion_html_html_html.html">Fraccion_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Gemfile_html_html_html.html">Gemfile_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Gemfile_lock_html_html_html.html">Gemfile_lock_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Guardfile_html_html_html.html">Guardfile_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/LICENSE_txt_html_html_html.html">LICENSE_txt_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Matrix_base_html_html_html.html">Matrix_base_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Matrix_disp_html_html_html.html">Matrix_disp_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Matrix_html_html_html.html">Matrix_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Mymatrix_html_html_html.html">Mymatrix_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/README_md_html_html_html.html">README_md_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Rakefile_html_html_html.html">Rakefile_html_html.html</a>
+  
     <li class="file"><a href="./doc/doc/doc/created_rid_html_html.html">created_rid_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/doc/created_rid_html_html_html.html">created_rid_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/index_html_html_html.html">index_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/darkfish_js_html_html.html">darkfish_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/jquery_js_html_html.html">jquery_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/navigation_js_html_html.html">navigation_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/search_index_js_html_html.html">search_index_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/search_js_html_html.html">search_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/searcher_js_html_html.html">searcher_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/mymatrix_gemspec_html_html_html.html">mymatrix_gemspec_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/rdoc_css_html_html.html">rdoc_css_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/table_of_contents_html_html_html.html">table_of_contents_html_html.html</a>
   
     <li class="file"><a href="./doc/doc/index_html_html.html">index_html.html</a>
   
@@ -233,6 +277,10 @@
 
   <div id="description" class="description">
     
+<p>La clase <a href="Matrix.html">Matrix</a> hereda de la clase
+&#39;Matrix_base&#39; y será la que se utilize para definir las matrices
+densas.</p>
+
   </div><!-- description -->
 
   
@@ -259,7 +307,7 @@
 
         <div class="method-description">
         
-        
+        <p>Crea el término matriz para referirse a dicha variable de instancia.</p>
         
         </div>
       </div>
@@ -286,7 +334,12 @@
 
         <div class="method-description">
           
-          
+          <p>El initialize realiza dos funciones:</p>
+<ul><li>
+<p>Con el comando &#39;super&#39; llama al initialize de la clase madre.</p>
+</li><li>
+<p>Otorgarle a la matriz el alto y el ancho deseado.</p>
+</li></ul>
           
           
             <div class="method-calls-super">
@@ -297,7 +350,7 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 65</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 79</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">ancho</span>, <span class="ruby-identifier">alto</span>)
         <span class="ruby-keyword">super</span>
         <span class="ruby-ivar">@matriz</span>=<span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">ancho</span>)
@@ -332,7 +385,14 @@
 
         <div class="method-description">
           
-          
+          <p>La multiplicación tiene dos partes diferenciadas:</p>
+<ul><li>
+<p>Si el elemento de la derecha es una matriz dispersa, esta se pasa a densa y
+se llama a super para que opere con ellas.</p>
+</li><li>
+<p>En otro caso directamente llama a super ya que las dos matrices serían
+densas.</p>
+</li></ul>
           
           
             <div class="method-calls-super">
@@ -343,7 +403,7 @@
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 107</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 133</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-keyword">if</span>( <span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix_disp</span>)
           <span class="ruby-identifier">m1</span> =<span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_matrix</span>
@@ -375,7 +435,14 @@
 
         <div class="method-description">
           
-          
+          <p>La suma tiene dos partes diferenciadas:</p>
+<ul><li>
+<p>Si el elemento de la derecha es una matriz dispersa, esta se pasa a densa y
+se llama a super para que opere con ellas.</p>
+</li><li>
+<p>En otro caso directamente llama a super ya que las dos matrices serían
+densas.</p>
+</li></ul>
           
           
             <div class="method-calls-super">
@@ -386,7 +453,7 @@
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 98</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 120</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-keyword">if</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix_disp</span>) 
           <span class="ruby-identifier">m1</span> = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_matrix</span>
@@ -418,7 +485,14 @@
 
         <div class="method-description">
           
-          
+          <p>La resta tiene dos partes diferenciadas:</p>
+<ul><li>
+<p>Si el elemento de la derecha es una matriz dispersa, esta se pasa a densa y
+se llama a super para que opere con ellas.</p>
+</li><li>
+<p>En otro caso directamente llama a super ya que las dos matrices serían
+densas.</p>
+</li></ul>
           
           
             <div class="method-calls-super">
@@ -429,7 +503,7 @@
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 116</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 146</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-keyword">if</span> (<span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix_disp</span>)
           <span class="ruby-identifier">m1</span> = <span class="ruby-identifier">other</span>.<span class="ruby-identifier">to_matrix</span>
@@ -461,13 +535,15 @@
 
         <div class="method-description">
           
-          
+          <p>Este método permite comparar dos objetos de la clase <a
+href="Matrix.html">Matrix</a> y devolverá &#39;true&#39; si son iguales y
+&#39;false&#39; si son distintos.</p>
           
           
 
           
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 90</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 108</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-ivar">@ancho</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
                 <span class="ruby-ivar">@alto</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span>
@@ -498,13 +574,13 @@
 
         <div class="method-description">
           
-          
+          <p>Este método halla el máximo elemento de la matriz desde la que se llame.</p>
           
           
 
           
           <div class="method-source-code" id="max-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 125</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 156</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">max</span>
         <span class="ruby-identifier">max</span>=<span class="ruby-value">0</span>
        <span class="ruby-ivar">@ancho</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> 
@@ -539,13 +615,13 @@
 
         <div class="method-description">
           
-          
+          <p>Este método halla el mínimo elemento de la matriz desde la que se llame.</p>
           
           
 
           
           <div class="method-source-code" id="min-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 137</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 169</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">min</span>
         <span class="ruby-identifier">min</span>=<span class="ruby-value">999999</span>
         <span class="ruby-ivar">@ancho</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
@@ -580,13 +656,14 @@
 
         <div class="method-description">
           
-          
+          <p>La salida de este método es la matriz pasada a string, de manera que pueda
+usarse en &#39;puts&#39;, comprobaciones, etc.</p>
           
           
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 71</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 87</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
         <span class="ruby-identifier">tmp</span>=<span class="ruby-string">&quot;[&quot;</span>
         <span class="ruby-ivar">@ancho</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>

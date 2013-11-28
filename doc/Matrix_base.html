@@ -156,7 +156,51 @@
   
     <li class="file"><a href="./doc/doc/created_rid_html.html">created_rid.html</a>
   
+    <li class="file"><a href="./doc/doc/doc/Fraccion_html_html_html.html">Fraccion_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Gemfile_html_html_html.html">Gemfile_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Gemfile_lock_html_html_html.html">Gemfile_lock_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Guardfile_html_html_html.html">Guardfile_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/LICENSE_txt_html_html_html.html">LICENSE_txt_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Matrix_base_html_html_html.html">Matrix_base_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Matrix_disp_html_html_html.html">Matrix_disp_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Matrix_html_html_html.html">Matrix_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Mymatrix_html_html_html.html">Mymatrix_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/README_md_html_html_html.html">README_md_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/Rakefile_html_html_html.html">Rakefile_html_html.html</a>
+  
     <li class="file"><a href="./doc/doc/doc/created_rid_html_html.html">created_rid_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/doc/created_rid_html_html_html.html">created_rid_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/index_html_html_html.html">index_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/darkfish_js_html_html.html">darkfish_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/jquery_js_html_html.html">jquery_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/navigation_js_html_html.html">navigation_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/search_index_js_html_html.html">search_index_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/search_js_html_html.html">search_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/js/searcher_js_html_html.html">searcher_js_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/mymatrix_gemspec_html_html_html.html">mymatrix_gemspec_html_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/rdoc_css_html_html.html">rdoc_css_html.html</a>
+  
+    <li class="file"><a href="./doc/doc/doc/table_of_contents_html_html_html.html">table_of_contents_html_html.html</a>
   
     <li class="file"><a href="./doc/doc/index_html_html.html">index_html.html</a>
   
@@ -229,7 +273,9 @@
 
   <div id="description" class="description">
     
-<p>require &#39;./Fraccion.rb&#39;</p>
+<p>La clase &#39;Matrix_base&#39; se usa como clase padre de las clases que
+contendrán tanto la matrix dispersa como la densa, conteniendo los métodos
+que ambas clase usarán en común.</p>
 
   </div><!-- description -->
 
@@ -257,7 +303,8 @@
 
         <div class="method-description">
         
-        
+        <p>Se declaran los términos &#39;ancho&#39; y &#39;alto&#39; que llamarán a
+las variables de instancia homónimas.</p>
         
         </div>
       </div>
@@ -270,7 +317,8 @@
 
         <div class="method-description">
         
-        
+        <p>Se declaran los términos &#39;ancho&#39; y &#39;alto&#39; que llamarán a
+las variables de instancia homónimas.</p>
         
         </div>
       </div>
@@ -297,13 +345,18 @@
 
         <div class="method-description">
           
-          
+          <p>La función de initialize es muy simple:</p>
+<ul><li>
+<p>Inicializar las variables de instancia para el tamaño de la matriz.</p>
+</li><li>
+<p>Crear una matriz vacía que será usada por las clases hijas.</p>
+</li></ul>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 7</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 11</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">ancho</span>, <span class="ruby-identifier">alto</span>)
         <span class="ruby-ivar">@ancho</span>, <span class="ruby-ivar">@alto</span> = <span class="ruby-identifier">ancho</span>, <span class="ruby-identifier">alto</span>
         <span class="ruby-ivar">@matriz</span> = [[]]
@@ -337,13 +390,14 @@
 
         <div class="method-description">
           
-          
+          <p>Método que permite multiplicar dos elementos de la clase. Está definido de
+forma funcional.</p>
           
           
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 31</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 42</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-identifier">resultado</span>=<span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@ancho</span>, <span class="ruby-ivar">@alto</span>)
         <span class="ruby-identifier">raise</span> <span class="ruby-string">&#39;Las matrices deben tener las mismas dimensiones&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">alto</span><span class="ruby-operator">==</span><span class="ruby-ivar">@ancho</span>
@@ -381,14 +435,15 @@
 
         <div class="method-description">
           
-          
+          <p>Método que permite sumar un elemento de la clase con otro. Está definido de
+forma funcional.</p>
           
           
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 20</span>
- <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-identifier">resultado</span>=<span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@ancho</span>, <span class="ruby-ivar">@alto</span>)
         <span class="ruby-identifier">raise</span> <span class="ruby-string">&#39;Las matrices deben tener las mismas dimensiones&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">ancho</span><span class="ruby-operator">==</span><span class="ruby-ivar">@ancho</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">alto</span><span class="ruby-operator">==</span><span class="ruby-ivar">@alto</span>
         <span class="ruby-ivar">@ancho</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
@@ -421,13 +476,14 @@
 
         <div class="method-description">
           
-          
+          <p>Este método permite restar dos objetos de esta clase entre sí. Está
+definido de forma funcional.</p>
           
           
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 46</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 58</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-identifier">resultado</span>=<span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@ancho</span>, <span class="ruby-ivar">@alto</span>)
         <span class="ruby-identifier">raise</span> <span class="ruby-string">&#39;Las matrices deben tener las mismas dimensiones&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">ancho</span><span class="ruby-operator">==</span><span class="ruby-ivar">@ancho</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">alto</span><span class="ruby-operator">==</span><span class="ruby-ivar">@alto</span>
@@ -461,14 +517,16 @@
 
         <div class="method-description">
           
-          
+          <p>Este método permite el uso de corchetes para la variable matriz en el caso
+de la llamada. Por ejemplo permite usar sentencias como: “p = @<a
+href="http://1">matriz</a>[1]”.</p>
           
           
 
           
           <div class="method-source-code" id="5B-5D-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 12</span>
- <span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">i</span>)
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">i</span>)
         <span class="ruby-ivar">@matriz</span>[<span class="ruby-identifier">i</span>]
 <span class="ruby-keyword">end</span></pre>
           </div><!-- 5B-5D-source -->
@@ -494,13 +552,15 @@
 
         <div class="method-description">
           
-          
+          <p>Este método es identico al anterior pero para el caso de que el elemento de
+la matriz se iguale a otro elemento. Esto permitiría realizar sentencias
+tales como: “@<a href="http://1">matriz</a>[1] = p”.</p>
           
           
 
           
           <div class="method-source-code" id="5B-5D-3D-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 16</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 25</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">i</span>,<span class="ruby-identifier">other</span>)
         <span class="ruby-ivar">@matriz</span>[<span class="ruby-identifier">i</span>]=<span class="ruby-identifier">other</span>
 <span class="ruby-keyword">end</span></pre>
