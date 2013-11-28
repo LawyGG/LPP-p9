@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Fraccion - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>lib/mymatrix/Fraccion.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link">Object
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  </ul>
+</nav>
+
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-25">#%</a>
+    
+    <li ><a href="#method-i-2A">#*</a>
+    
+    <li ><a href="#method-i-2B">#+</a>
+    
+    <li ><a href="#method-i-2D">#-</a>
+    
+    <li ><a href="#method-i-2F">#/</a>
+    
+    <li ><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li ><a href="#method-i-abs">#abs</a>
+    
+    <li ><a href="#method-i-coerce">#coerce</a>
+    
+    <li ><a href="#method-i-mcd">#mcd</a>
+    
+    <li ><a href="#method-i-mcm">#mcm</a>
+    
+    <li ><a href="#method-i-opuesto">#opuesto</a>
+    
+    <li ><a href="#method-i-reciproco">#reciproco</a>
+    
+    <li ><a href="#method-i-to_f">#to_f</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li class="file"><a href="./Guardfile.html">Guardfile</a>
+  
+    <li class="file"><a href="./LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="./README_md.html">README</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="./mymatrix_gemspec.html">mymatrix.gemspec</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Fraccion.html">Fraccion</a>
+  
+    <li><a href="./Matrix.html">Matrix</a>
+  
+    <li><a href="./Matrix_base.html">Matrix_base</a>
+  
+    <li><a href="./Matrix_disp.html">Matrix_disp</a>
+  
+    <li><a href="./Mymatrix.html">Mymatrix</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Fraccion</h1>
+
+  <div id="description" class="description">
+    <dl class="rdoc-list note-list"><dt>Autores
+<dd></dd></dl>
+<ul><li>
+<p>Laura Abigail Gómez González</p>
+</li><li>
+<p>Alberto Fariña Barrera</p>
+</li></ul>
+
+<p>La clase <a href="Fraccion.html">Fraccion</a> ofrece la posibilidad de
+crear objetos representados como fracción, así como realizar muchas de las
+operaciones más básicas que se pueden realizar con fracciones, tales como
+operaciones aritméticas, comparacionales, etc.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <!-- Attributes -->
+    <section id="attribute-method-details" class="method-section section">
+      <h3 class="section-header">Attributes</h3>
+
+      
+      <div id="attribute-i-denom" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">denom</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Se crean los atributos &#39;num&#39; y &#39;denom&#39; para poder acceder
+posteriormente a las variables de instancia creadas en el initialize.</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-num" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">num</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Se crean los atributos &#39;num&#39; y &#39;denom&#39; para poder acceder
+posteriormente a las variables de instancia creadas en el initialize.</p>
+        
+        </div>
+      </div>
+      
+    </section><!-- attribute-method-details -->
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(n, d)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>El método initialize realiza dos funciones principales:</p>
+<ul><li>
+<p>Comprobar que la entrada del programa es correcta.</p>
+</li><li>
+<p>Crear e inicializar las variables de instancia a los valores indicados.</p>
+</li></ul>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">n</span>, <span class="ruby-identifier">d</span>)
+  <span class="ruby-ivar">@num</span>, <span class="ruby-ivar">@denom</span> = <span class="ruby-identifier">n</span>, <span class="ruby-identifier">d</span>
+  
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">n</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Numeric</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span> <span class="ruby-keyword">unless</span> (<span class="ruby-identifier">d</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>)
+  
+  <span class="ruby-identifier">min</span> = <span class="ruby-identifier">mcd</span>(<span class="ruby-ivar">@num</span>,<span class="ruby-ivar">@denom</span>)
+  <span class="ruby-ivar">@num</span> = <span class="ruby-ivar">@num</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">min</span>
+  <span class="ruby-ivar">@denom</span> = <span class="ruby-ivar">@denom</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">min</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- new-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- new-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-25" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">%</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calcula el resto de dos Fracciones.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="25-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">%</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">0</span>,<span class="ruby-value">1</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 25-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 25-method -->
+
+    
+      <div id="method-i-2A" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">*</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calcula la multiplicación de dos Fracciones devolviendo un nuevo objeto
+Fracción con el resultado.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="2A-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">nn</span> = (<span class="ruby-ivar">@num</span><span class="ruby-operator">*</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">num</span>)
+  <span class="ruby-identifier">nd</span> = (<span class="ruby-ivar">@denom</span><span class="ruby-operator">*</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">denom</span>)
+  <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">nn</span>,<span class="ruby-identifier">nd</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 2A-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 2A-method -->
+
+    
+      <div id="method-i-2B" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">+</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calcula la suma de dos Fracciones devolviendo un nuevo objeto Fracción con
+el resultado.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="2B-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">nd</span> = <span class="ruby-identifier">mcm</span>(<span class="ruby-ivar">@denom</span>,<span class="ruby-identifier">other</span>.<span class="ruby-identifier">denom</span>)
+  <span class="ruby-identifier">nn1</span> = (<span class="ruby-identifier">nd</span><span class="ruby-operator">/</span><span class="ruby-ivar">@denom</span>)<span class="ruby-operator">*</span><span class="ruby-ivar">@num</span>
+  <span class="ruby-identifier">nn2</span> = (<span class="ruby-identifier">nd</span><span class="ruby-operator">/</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">denom</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">num</span>
+  <span class="ruby-identifier">nn</span> = <span class="ruby-identifier">nn1</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">nn2</span>
+  <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">nn</span>,<span class="ruby-identifier">nd</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 2B-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 2B-method -->
+
+    
+      <div id="method-i-2D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">-</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calcula la resta de dos Fracciones devolviendo un nuevo objeto Fracción con
+el resultado.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="2D-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">nd</span> = <span class="ruby-identifier">mcm</span>(<span class="ruby-ivar">@denom</span>,<span class="ruby-identifier">other</span>.<span class="ruby-identifier">denom</span>)
+  <span class="ruby-identifier">nn1</span> = (<span class="ruby-identifier">nd</span><span class="ruby-operator">/</span><span class="ruby-ivar">@denom</span>)<span class="ruby-operator">*</span><span class="ruby-ivar">@num</span>
+  <span class="ruby-identifier">nn2</span> = (<span class="ruby-identifier">nd</span><span class="ruby-operator">/</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">denom</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">num</span>
+  <span class="ruby-identifier">nn</span> = <span class="ruby-identifier">nn1</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">nn2</span>
+  <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">nn</span>,<span class="ruby-identifier">nd</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 2D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 2D-method -->
+
+    
+      <div id="method-i-2F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">/</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calcula la división de dos Fracciones devolviendo un nuevo objeto Fracción
+con el resultado.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="2F-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">/</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">nn</span> = (<span class="ruby-ivar">@num</span><span class="ruby-operator">*</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">denom</span>)
+  <span class="ruby-identifier">nd</span> = (<span class="ruby-ivar">@denom</span><span class="ruby-operator">*</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">num</span>)
+  <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">nn</span>,<span class="ruby-identifier">nd</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 2F-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 2F-method -->
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Este método junto al módulo comparable permite la comparación de objetos de
+la clase fraccion.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span> (<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">nd</span> = <span class="ruby-identifier">mcm</span>(<span class="ruby-ivar">@denom</span>,<span class="ruby-identifier">other</span>.<span class="ruby-identifier">denom</span>)
+  <span class="ruby-identifier">nn1</span> = (<span class="ruby-identifier">nd</span><span class="ruby-operator">/</span><span class="ruby-ivar">@denom</span>)<span class="ruby-operator">*</span><span class="ruby-ivar">@num</span>
+  <span class="ruby-identifier">nn2</span> = (<span class="ruby-identifier">nd</span><span class="ruby-operator">/</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">denom</span>)<span class="ruby-operator">*</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">num</span>
+
+  <span class="ruby-identifier">nn1</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">nn2</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 3C-3D-3E-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 3C-3D-3E-method -->
+
+    
+      <div id="method-i-abs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">abs</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calcula el valor absoluto de una Fracción.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="abs-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">abs</span>
+  <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@num</span>.<span class="ruby-identifier">abs</span>,<span class="ruby-ivar">@denom</span>.<span class="ruby-identifier">abs</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- abs-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- abs-method -->
+
+    
+      <div id="method-i-coerce" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">coerce</span><span
+            class="method-args">(something)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>En el caso de que se realize una operacion de una Fracción con algún otro
+objeto, este método convierte ese otro objeto en un objeto de tipo Fracción
+para poder realizar la operación correctamente.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="coerce-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">coerce</span>(<span class="ruby-identifier">something</span>)
+
+  <span class="ruby-keyword">if</span>(<span class="ruby-identifier">something</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Numeric</span>)
+      <span class="ruby-identifier">aux</span> = <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">something</span>,<span class="ruby-value">1</span>)
+      [<span class="ruby-keyword">self</span>,<span class="ruby-identifier">aux</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- coerce-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- coerce-method -->
+
+    
+      <div id="method-i-mcd" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mcd</span><span
+            class="method-args">(a,b)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Permite hallar el máximo común divisor de dos numeros cualquiera.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="mcd-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mcd</span>(<span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">abs</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span> = <span class="ruby-identifier">b</span>, <span class="ruby-identifier">a</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">b</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">a</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mcd-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mcd-method -->
+
+    
+      <div id="method-i-mcm" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mcm</span><span
+            class="method-args">(a,b)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Permite hallar el mínimo común múltiplo de dos números cualquiera.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="mcm-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mcm</span>(<span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">l1</span> = <span class="ruby-identifier">a</span><span class="ruby-operator">*</span><span class="ruby-identifier">b</span>
+  <span class="ruby-identifier">l2</span> = <span class="ruby-identifier">l1</span><span class="ruby-operator">/</span><span class="ruby-identifier">mcd</span>(<span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span>) 
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- mcm-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- mcm-method -->
+
+    
+      <div id="method-i-opuesto" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">opuesto</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calcula el opuesto de una Fracción.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="opuesto-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">opuesto</span>
+  <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>((<span class="ruby-value">-1</span>)<span class="ruby-operator">*</span><span class="ruby-ivar">@num</span>,<span class="ruby-ivar">@denom</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- opuesto-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- opuesto-method -->
+
+    
+      <div id="method-i-reciproco" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reciproco</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calcula el recíproco de una Fracción.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="reciproco-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reciproco</span>
+  <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@denom</span>,<span class="ruby-ivar">@num</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- reciproco-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- reciproco-method -->
+
+    
+      <div id="method-i-to_f" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_f</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convierte una Fracción a Flotante.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_f-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_f</span>
+  (<span class="ruby-ivar">@num</span>.<span class="ruby-identifier">to_f</span>)<span class="ruby-operator">/</span>(<span class="ruby-ivar">@denom</span>.<span class="ruby-identifier">to_f</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_f-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_f-method -->
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Convierte una Fracción a String sobretodo para facilitar su muestra por
+pantalla.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/mymatrix/Fraccion.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+  <span class="ruby-node">&quot;#{@num}/#{@denom}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- to_s-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- to_s-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

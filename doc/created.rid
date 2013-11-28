@@ -1,0 +1,15 @@
+Thu, 28 Nov 2013 16:22:39 +0000
+./lib/mymatrix/version.rb	Fri, 15 Nov 2013 10:52:31 +0000
+./lib/mymatrix/Fraccion.rb	Wed, 27 Nov 2013 16:34:28 +0000
+./lib/mymatrix/matrix.rb	Thu, 28 Nov 2013 16:01:21 +0000
+./lib/mymatrix.rb	Thu, 28 Nov 2013 16:11:36 +0000
+./Guardfile	Wed, 13 Nov 2013 12:54:46 +0000
+./doc/created.rid	Thu, 28 Nov 2013 16:22:39 +0000
+./LICENSE.txt	Wed, 13 Nov 2013 12:24:24 +0000
+./spec/spec_helper.rb	Wed, 13 Nov 2013 12:43:12 +0000
+./spec/mymatrix_spec.rb	Fri, 22 Nov 2013 12:58:57 +0000
+./README.md	Fri, 15 Nov 2013 10:52:06 +0000
+./Gemfile.lock	Wed, 13 Nov 2013 12:52:13 +0000
+./Gemfile	Wed, 13 Nov 2013 12:52:02 +0000
+./Rakefile	Tue, 19 Nov 2013 15:00:18 +0000
+./mymatrix.gemspec	Wed, 13 Nov 2013 12:41:57 +0000
