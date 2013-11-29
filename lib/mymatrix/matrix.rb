@@ -82,6 +82,18 @@ class Matrix < Matrix_base
 		@matriz.map! {Array.new(alto)}		
 	end
 
+	# Este método recorre la matriz y devolverá la posición de la matriz si lo que se realiza en el bloque
+	# llamado por yield es verdadero, si lo que se realiza en el bloque no se cumple, devuelve nil.
+	def encontrar
+		@ancho.times do |i|
+			@alto.times do |j|
+				val = @matriz[i][j]
+				return [i,j] if yield(val)
+			end
+		end
+		return nil
+	end
+	
 	# La salida de este método es la matriz pasada a string, de manera que pueda usarse en 'puts',
 	# comprobaciones, etc.
 	def to_s

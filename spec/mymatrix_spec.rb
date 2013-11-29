@@ -188,4 +188,13 @@ describe "MyMatrix" do
 			(@f1 * @f2).should == r
 		end
 	end
+	
+	describe "Comprobacion de metodo encontrar" do
+		it "Comprobacion de mayor igual" do
+			r = Matrix.new(3,3)
+			r.matriz = [[1,2,3],[4,5,6],[7,8,9]]
+
+			r.encontrar{ |e| e*e >= 16 }.should eq([1,0])
+		end
+	end
 end

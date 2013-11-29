@@ -249,7 +249,7 @@ la matriz.</p>
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 193</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 205</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> (<span class="ruby-identifier">ancho</span>, <span class="ruby-identifier">alto</span>, <span class="ruby-identifier">nnum</span>)
         <span class="ruby-keyword">super</span>(<span class="ruby-identifier">ancho</span>, <span class="ruby-identifier">alto</span>)
 
@@ -293,7 +293,7 @@ cual sea su posición y siempre que sea dispersa para luego operar de nuevo.</p>
 
           
           <div class="method-source-code" id="2A-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 300</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 312</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-identifier">m1</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_matrix</span>
         
@@ -336,7 +336,7 @@ el algoritmo que se encuentra en el &#39;else&#39;.</p>
 
           
           <div class="method-source-code" id="2B-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 266</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 278</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">other</span>)
 
         <span class="ruby-keyword">if</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span>)
@@ -399,7 +399,7 @@ operar de nuevo y si es dispersa se sigue el algoritmo.</p>
 
           
           <div class="method-source-code" id="2D-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 313</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 325</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-keyword">if</span>(<span class="ruby-identifier">other</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Matrix</span>)
                 <span class="ruby-identifier">m1</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_matrix</span>
@@ -459,7 +459,7 @@ operar de nuevo y si es dispersa se sigue el algoritmo.</p>
 
           
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 255</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 267</span>
 <span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other</span>)
         <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">length</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
            <span class="ruby-ivar">@x</span>[<span class="ruby-identifier">k</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">x</span>[<span class="ruby-identifier">k</span>]
@@ -498,7 +498,7 @@ encuentra un nulo devuelve -1.</p>
 
           
           <div class="method-source-code" id="encontrar-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 203</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 215</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">encontrar</span>(<span class="ruby-identifier">i</span>, <span class="ruby-identifier">j</span>)
   <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">length</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
         <span class="ruby-keyword">if</span> ( <span class="ruby-ivar">@x</span>[<span class="ruby-identifier">k</span>]<span class="ruby-operator">==</span><span class="ruby-identifier">i</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@y</span>[<span class="ruby-identifier">k</span>]<span class="ruby-operator">==</span><span class="ruby-identifier">j</span>)
@@ -536,7 +536,7 @@ encuentra un nulo devuelve -1.</p>
 
           
           <div class="method-source-code" id="max-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 345</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 357</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">max</span>
   <span class="ruby-identifier">max</span>=<span class="ruby-value">0</span>
 
@@ -576,7 +576,7 @@ encuentra un nulo devuelve -1.</p>
 
           
           <div class="method-source-code" id="min-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 357</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 369</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">min</span>
   <span class="ruby-identifier">min</span>=<span class="ruby-value">999999</span>
 
@@ -617,7 +617,7 @@ encuentra un nulo devuelve -1.</p>
 
           
           <div class="method-source-code" id="to_matrix-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 238</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 250</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_matrix</span>
         <span class="ruby-identifier">mat</span> = <span class="ruby-constant">Matrix</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@ancho</span>,<span class="ruby-ivar">@alto</span>)
 
@@ -663,7 +663,7 @@ o compararla</p>
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 213</span>
+            <pre><span class="ruby-comment"># File lib/mymatrix/matrix.rb, line 225</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
         <span class="ruby-identifier">tmp</span>=<span class="ruby-string">&quot;[&quot;</span>
         <span class="ruby-ivar">@ancho</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
