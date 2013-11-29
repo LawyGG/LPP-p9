@@ -198,7 +198,8 @@ class Matrix_disp < Matrix_base
 		@valor = Array.new[nnum]
 	end
 
-	# 
+	# Este método permite comprobar si es una posición dada de la matriz hay un elemento o es
+	# nulo. Si hay un elemento no nulo, devuelve ese elemento. Si encuentra un nulo devuelve -1. 
 	def encontrar(i, j)
 	  @x.length.times do |k|
 		if ( @x[k]==i && @y[k]==j)
