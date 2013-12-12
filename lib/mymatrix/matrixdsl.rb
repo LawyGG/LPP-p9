@@ -401,6 +401,7 @@ class MatrixDSL
     @print = "" #opcion para imprimir (console/file)
     @type = "" #tipo de matrices
     @operacion = op
+    @operand=[]
 
     instance_eval(&block)
   end
@@ -430,10 +431,33 @@ class MatrixDSL
   end
 
   def run
+	salida="\n #{@operacion}"	
+
 	case @operacion
+		when "suma" then salida << "\n #{(@operand[0]+@operand[1]).to_s}"
+		when "resta" then salida << "\n #{(@operand[0]-@operand[1]).to_s}"
+		when "multiplicacion" then salida << "\n #{(@operand[0]*@operand[1]).to_s}"
+		when "minimo" then salida << "\n #{@operand[0].min}"
+		when "maximo" then salida << "\n #{@operand[0].max}"
 	end
+
+	case @print
+		when "console" then puts salida
+		when "file" then File.open('result.txt', 'w') do |f|
+								   f.puts salida
+								end
+  	end
+
   end
 
 end
 
-
+#ejemplo = MatrixDSL.new("suma")do
+#	option("console")
+#	option("densa")
+#	
+#	operand([[1,1,1],[1,1,1],[1,1,1]])
+#	operand([[1,1,1],[1,1,1],[1,1,1]])
+#
+#	end
+#ejemplo.run
