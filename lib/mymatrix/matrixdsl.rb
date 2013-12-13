@@ -421,13 +421,13 @@ class MatrixDSL
 	  @operand << aux
 
 	elsif @type == 'dispersa'
-	   aux = Matrix_disp(vector[0],vector[1],vector[2])
+	   aux = Matrix_disp.new(vector[0],vector[1],vector[2])
 	   aux.x = vector[3]
 	   aux.y = vector[4]
 	   aux.valor = vector[5]
 
-	   @operand << aux
 	end
+	@operand << aux
   end
 
   def run
@@ -444,10 +444,10 @@ class MatrixDSL
 	case @print
 		when "console" then puts salida
 		when "file" then File.open('result.txt', 'w') do |f|
-								   f.puts salida
-								end
+					f.puts salida
+				 end
   	end
-
+	salida
   end
 
 end

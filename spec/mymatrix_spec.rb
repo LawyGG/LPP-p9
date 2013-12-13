@@ -190,11 +190,59 @@ describe "MyMatrix" do
 	end
 	
 	describe "Comprobacion de metodo encontrar" do
-		it "Comprobacion de mayor igual" do
+		it "Comprobacion de encontrar" do
 			r = Matrix.new(3,3)
 			r.matriz = [[1,2,3],[4,5,6],[7,8,9]]
 
 			r.encontrar{ |e| e*e >= 16 }.should eq([1,0])
+		end
+	end
+
+	describe "Comprobación DSL" do
+		it "Comprobacion de suma densas" do
+			ejemplo = MatrixDSL.new("suma")do
+       				option("console")
+       				option("densa")
+       
+       				operand([[1,1,1],[1,1,1],[1,1,1]])
+       				operand([[1,1,1],[1,1,1],[1,1,1]])
+      			end
+
+			ejemplo.run.should eq("\n suma\n [[2,2,2],[2,2,2],[2,2,2]]")
+		end
+
+		it "Comprobación de maximo densas" do
+			ejemplo = MatrixDSL.new("maximo")do
+				option("file")
+				option("densa")
+
+				operand([[2,1,1,],[1,1,1]])
+			end
+
+			ejemplo.run.should eq("\n maximo\n 2")
+		end
+
+		it "Comprobacion de resta dispersas" do
+			ejemplo = MatrixDSL.new("resta")do
+				option("console")
+				option("dispersa")
+
+				operand([3,3,2,[0,0],[0,1],[1,3]])
+				operand([3,3,2,[0,0],[0,1],[1,3]])
+			end
+
+			ejemplo.run.should eq("\n resta\n [[0,0,0],[0,0,0],[0,0,0]]")
+		end
+
+		it "Comprobacion de minimo dispersas" do
+			ejemplo = MatrixDSL.new("minimo")do
+				option("file")
+				option("dispersa")
+
+				operand([3,3,2,[0,0],[0,1],[1,3]])
+			end
+
+			ejemplo.run.should eq("\n minimo\n 1")
 		end
 	end
 end
